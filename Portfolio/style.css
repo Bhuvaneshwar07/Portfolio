@@ -1,0 +1,401 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #080808;
+    color: #fff;
+}
+#header{    
+    width: 100%;
+    height: 100vh; 
+    background-image: url('images/img1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    width: 140px;
+    position: relative;
+    margin: 10px 15px 0 20px;
+    top: 25px;
+    left: 20px;
+    color: #ddd9d9;
+    text-decoration: underline;
+    text-decoration-color: #db9436;
+}
+
+nav ul li{
+    display: block;
+    width: 120px;
+    list-style: none;
+    margin: 0 20px 0 30px;
+    position: relative;
+    background: rgba(219, 148, 54, 0.08);
+    border: 1px solid rgba(219, 148, 54, 0.8);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.5s;
+}
+
+nav ul li:hover,
+nav ul li:focus-within{
+    border-color: #ff004f;
+}
+
+nav ul li[aria-current="page"]{
+    border-color: #ff004f;
+}
+
+nav ul li a{
+    display: block;
+    color: #db9436;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    padding: 12px 18px;
+    transition: color 0.5s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus{
+    color: #e9e6e4;
+}
+
+nav ul li a[aria-current="page"]{
+    color: #e9e6e4;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus::after{
+    width: 100%;
+}
+
+nav ul li a[aria-current="page"]::after{
+    width: 100%;
+}
+nav ul{
+    text-align: left;
+     display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 90px;
+}
+.myself{
+    position: absolute;
+    top: 65%;
+    left: 20% ;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+p{
+    color: #ddc3a1;
+}
+
+h1{
+    color: #e9dfd2;
+}
+h1 span{
+    color: #db9436;
+}
+
+/* Resume link in the navigation should match the other navigation list items. */
+nav ul li a[href*="resume"] {
+    display: block;
+    margin: 0;
+    padding: 12px 18px;
+    color: #db9436;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+nav ul li a[href*="resume"]:hover,
+nav ul li a[href*="resume"]:focus {
+    color: #e9e6e4;
+    background: transparent;
+}
+
+a[href*="resume"]:not(nav ul li a[href*="resume"]) {
+    display: inline-block;
+    margin: 30px 0 0;
+    padding: 10px 18px;
+    color: #db9436;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(219, 148, 54, 0.08);
+    border: 1px solid rgba(219, 148, 54, 0.8);
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+a[href*="resume"]:hover,
+a[href*="resume"]:focus {
+    color: #e9e6e4;
+    background: rgba(219, 148, 54, 0.2);
+}
+
+#about {
+    padding: 80px 0;
+    color: #eeece8;
+
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-col-2 {
+    flex-basis: 50%;
+    margin-right: 150px;
+    margin-left: 50px;
+}
+
+.sub-title{
+    font-size: 30px;
+    color: #e4e1de;
+    margin-bottom: 18px;
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-color: #dd7a08;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+
+.titles{
+    display: flex;
+    margin : 20px 0 40px;
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    color: #db9436;
+}
+
+.tab-links.active-link,
+.tab-links:hover,
+.tab-links:focus{
+    color: #d86417;
+}
+
+.tab-links::after{
+    content: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: none;
+}
+
+.tab-links.active-link::after{
+    width: 0;
+}
+
+.tab-links:hover::after,
+.tab-links:focus::after{
+    width: 0;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    padding: 14px 18px;
+    border: 1px solid rgba(219, 148, 54, 0.55);
+    border-radius: 12px;
+    background: rgba(219, 148, 54, 0.08);
+}
+
+.tab-contents ul li span{
+    font-size: 14px;
+    color: #b8ad17;
+}
+
+#projects {
+    margin: 40px auto;
+    padding: 35px;
+    border: 1px solid rgba(219, 148, 54, 0.55);
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(219, 148, 54, 0.12), rgba(255, 255, 255, 0.03));
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+#projects h3,
+#experience h3 {
+    color: #df731c;
+}
+
+#experience {
+    margin: 40px auto;
+    padding: 35px;
+    border: 1px solid rgba(219, 148, 54, 0.55);
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(219, 148, 54, 0.12), rgba(255, 255, 255, 0.03));
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+.experience-box,
+.experience-item {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 20px;
+    transition: none;
+}
+
+.experience-box:hover,
+.experience-item:hover {
+    transform: none;
+    border-color: transparent;
+}
+
+.experience-box h4,
+.experience-item h4 {
+    color: #f0e7df;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.experience-box p,
+.experience-item p,
+.experience-box li,
+.experience-item li {
+    color: #d8d2ca;
+    line-height: 1.7;
+}
+
+.experience-box ul,
+.experience-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.experience-box li,
+.experience-item li {
+    margin-bottom: 8px;
+}
+
+
+#contact {
+    width: min(1100px, calc(100% - 40px));
+    margin: 40px auto;
+    padding: 35px;
+    border: 1px solid rgba(219, 148, 54, 0.55);
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(219, 148, 54, 0.12), rgba(255, 255, 255, 0.03));
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+#contact .contact-item,
+#contact .contact-box,
+#contact .contact-details > *,
+#contact .contact-info > *,
+#contact .contact-left > p {
+    display: block;
+    margin: 12px 0;
+    padding: 16px 20px;
+    color: #e9dfd2;
+    border: 1px solid rgba(219, 148, 54, 0.5);
+    border-radius: 12px;
+    background: rgba(219, 148, 54, 0.08);
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+#contact .contact-item:hover,
+#contact .contact-box:hover,
+#contact .contact-details > *:hover,
+#contact .contact-info > *:hover,
+#contact .contact-left > p:hover {
+    transform: translateY(-3px);
+    border-color: #db9436;
+    background: rgba(219, 148, 54, 0.16);
+}
+
+#contact .contact-details a,
+#contact .contact-info a,
+#contact .contact-left a {
+    color: #e9dfd2;
+    text-decoration: none;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px 16px;
+    color: #f0e7df;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(219, 148, 54, 0.45);
+    border-radius: 10px;
+    outline: none;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #db9436;
+    box-shadow: 0 0 0 3px rgba(219, 148, 54, 0.14);
+}
+
+#contact button,
+#contact input[type="submit"] {
+    padding: 12px 18px;
+    color: #db9436;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(219, 148, 54, 0.08);
+    border: 1px solid rgba(219, 148, 54, 0.8);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: color 0.5s, border-color 0.5s, background 0.5s;
+}
+
+#contact button:hover,
+#contact button:focus,
+#contact input[type="submit"]:hover,
+#contact input[type="submit"]:focus {
+    color: #e9e6e4;
+    border-color: #ff004f;
+    background: rgba(219, 148, 54, 0.16);
+}
